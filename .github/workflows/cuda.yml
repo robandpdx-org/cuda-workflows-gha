@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Install CUDA Toolkit 12.4
-        uses: ./.github/actions/install-cuda
+        uses: ./.github/actions/setup-cuda
       - name: show CUDA version
         run: nvcc --version
       - name: show GPU
