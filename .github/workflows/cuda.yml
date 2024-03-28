@@ -1,6 +1,5 @@
 name: CUDA workflows
-description: |
-  This workflow demonstrates how to use the NVIDIA CUDA Toolkit
+
 on:
   workflow_dispatch:
 
