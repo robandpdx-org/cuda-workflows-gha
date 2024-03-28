@@ -11,6 +11,6 @@ jobs:
       - name: Install CUDA Toolkit 12.4
         uses: ./.github/actions/setup-cuda
       - name: show CUDA version
-        run: nvcc --version
+        run: find / -type f -name nvcc 2>/dev/null #--version
       - name: show GPU
         run: nvidia-smi
