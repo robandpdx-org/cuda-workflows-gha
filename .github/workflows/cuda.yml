@@ -14,3 +14,5 @@ jobs:
         run: nvcc --version
       - name: show GPU
         run: nvidia-smi
+      - name: show /usr/local
+        run: ls -l /usr/local
