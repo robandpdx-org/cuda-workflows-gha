@@ -8,6 +8,10 @@ jobs:
     runs-on: 4-core-gpu
     steps:
       - uses: actions/checkout@v4.1.1
+      - name: show /usr/local
+        run: ls -l /usr/local
+      - name: show env
+        run: env
       - name: Install CUDA Toolkit 12.4
         uses: ./.github/actions/setup-cuda
       - name: show CUDA version
@@ -16,3 +20,5 @@ jobs:
         run: nvidia-smi
       - name: show /usr/local
         run: ls -l /usr/local
+      - name: show env
+        run: env
