@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cuda11:
+  cuda12:
     runs-on: 4-core-gpu
     steps:
       - uses: actions/checkout@v4.1.1
