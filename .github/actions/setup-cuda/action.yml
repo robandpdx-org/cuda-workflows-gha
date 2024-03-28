@@ -1,0 +1,19 @@
+name: Setup CUDA
+description: 'Setup CUDA for use in GitHub Actions'
+inputs:
+  cuda-version:
+    description: 'The version of CUDA to setup'
+    required: true
+    default: '11.0'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup CUDA
+      shell: bash
+      run: |
+        wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+        sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+        sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+        sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+        sudo apt-get update
+        sudo apt-get -y install cuda

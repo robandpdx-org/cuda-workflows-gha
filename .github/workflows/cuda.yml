@@ -1,0 +1,17 @@
+name: CUDA workflows
+description: |
+  This workflow demonstrates how to use the NVIDIA CUDA Toolkit
+on:
+  workflow_dispatch:
+
+jobs:
+  cuda11:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Install CUDA Toolkit 11.0
+        uses: ./.github/actions/install-cuda
+      - name: show CUDA version
+        run: nvcc --version
+      - name: show GPU
+        run: nvidia-smi
