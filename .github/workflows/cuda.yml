@@ -18,5 +18,7 @@ jobs:
           nvidia-smi
       - name: show /usr/local
         run: ls -l /usr/local
+      - name: show $CUDA/bin
+        run: ls -l $CUDA/bin
       - name: show env
         run: env
