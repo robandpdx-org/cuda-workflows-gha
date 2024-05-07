@@ -39,8 +39,9 @@ jobs:
         run: |
           ls -ld /var
           ls -ld /var/log
+          ls -l var/log
       - name: show CUDA version
-        run: $CUDA/bin/nvcc --version
+        run: $CUDA_PATH/bin/nvcc --version
       - name: show GPU
         run: |
           which nvidia-smi
