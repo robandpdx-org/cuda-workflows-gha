@@ -22,3 +22,23 @@ jobs:
         run: ls -l $CUDA/bin
       - name: show env
         run: env
+  cuda114:
+    runs-on: 4-core-gpu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Jimver/cuda-toolkit@v0.2.15
+        id: cuda-toolkit
+        with:
+          cuda: '11.4'
+      - name: show CUDA version
+        run: nvcc --version
+      - name: show GPU
+        run: |
+          which nvidia-smi
+          nvidia-smi
+      - name: show /usr/local
+        run: ls -l /usr/local
+      - name: show $CUDA/bin
+        run: ls -l $CUDA/bin
+      - name: show env
+        run: env
