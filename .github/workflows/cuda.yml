@@ -30,11 +30,11 @@ jobs:
         run: |
           ls -ld /var
           ls -ld /var/log
-      - name: Install CUDA Toolkit 11.4.4
+      - name: Install CUDA Toolkit 11.4.43
         uses: robandpdx-org/cuda-toolkit@fix-log-upload-error
         id: cuda-toolkit
         with:
-          cuda: '11.4.4'
+          cuda: '11.4.3'
       - name: show CUDA version
         run: nvcc --version
       - name: show GPU
