@@ -22,7 +22,7 @@ jobs:
         run: ls -l $CUDA/bin
       - name: show env
         run: env
-  cuda114:
+  cuda114gpu:
     runs-on: 4-core-ubuntu-gpu-t4
     steps:
       - uses: actions/checkout@v4
@@ -54,3 +54,34 @@ jobs:
         run: |
           which nvidia-smi
           nvidia-smi
+  cuda114:
+    runs-on: 4-core-ubuntu-gpu-t4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look around
+        run: |
+          ls -ld /var
+          ls -ld /var/log
+      - name: what is in sudoers file
+        run: sudo cat /etc/sudoers
+      - name: Install CUDA Toolkit 12.4
+        uses: robandpdx-org/cuda-toolkit@fix-log-upload-error
+        id: cuda-toolkit
+      - name: Look around
+        run: |
+          ls -ld /var
+          ls -ld /var/log
+          ls -l /var/log
+      - name: show /usr/local
+        run: ls -l /usr/local
+      - name: show $CUDA_PATH/bin
+        run: ls -l $CUDA_PATH/bin
+      - name: show env
+        run: env
+      - name: show CUDA version
+        run: $CUDA_PATH/bin/nvcc --version
+      - name: show GPU
+        run: |
+          which nvidia-smi
+          nvidia-smi
+        
