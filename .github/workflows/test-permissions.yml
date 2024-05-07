@@ -1,0 +1,21 @@
+name: Permissions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sudo:
+    runs-on: 4-core-ubuntu-gpu-t4
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: sudo
+        run: |
+          sudo mkdir newdir
+          sudo touch newdir/newfile
+      - name: show newdir
+        run: |
+          ls -ld newdir
+          ls -l newdir
+      - name: show env
+        run: env
+  
