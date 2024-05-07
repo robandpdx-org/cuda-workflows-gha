@@ -26,6 +26,10 @@ jobs:
     runs-on: 4-core-ubuntu-gpu-t4
     steps:
       - uses: actions/checkout@v4
+      - name: Look around
+        run: |
+          ls -ld /var
+          ls -ld /var/log
       - name: Install CUDA Toolkit 11.4.4
         uses: Jimver/cuda-toolkit@v0.2.15
         id: cuda-toolkit
