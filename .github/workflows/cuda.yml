@@ -35,6 +35,10 @@ jobs:
         id: cuda-toolkit
         with:
           cuda: '11.4.4'
+      - name: Look around
+        run: |
+          ls -ld /var
+          ls -ld /var/log
       - name: show CUDA version
         run: $CUDA/bin/nvcc --version
       - name: show GPU
