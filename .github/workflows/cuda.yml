@@ -26,6 +26,8 @@ jobs:
     runs-on: 4-core-ubuntu-gpu-t4
     steps:
       - uses: actions/checkout@v4
+      - name: umask
+        run: umask
       - name: Look around
         run: |
           ls -ld /var
