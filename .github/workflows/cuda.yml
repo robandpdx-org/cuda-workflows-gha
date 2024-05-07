@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: umask
-        run: umask
+        run: sudo umask
       - name: Look around
         run: |
           ls -ld /var
