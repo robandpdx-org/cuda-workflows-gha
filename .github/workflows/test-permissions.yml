@@ -5,7 +5,10 @@ on:
 
 jobs:
   sudo:
-    runs-on: 4-core-ubuntu-gpu-t4
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, 4-core-ubuntu-gpu-t4]
     steps:
       - uses: actions/checkout@v4.1.1
       - name: sudo
