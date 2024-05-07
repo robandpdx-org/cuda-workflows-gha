@@ -31,7 +31,7 @@ jobs:
           ls -ld /var
           ls -ld /var/log
       - name: Install CUDA Toolkit 11.4.4
-        uses: Jimver/cuda-toolkit@v0.2.15
+        uses: Jimver/cuda-toolkit@master
         id: cuda-toolkit
         with:
           cuda: '11.4.4'
